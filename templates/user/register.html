@@ -1,0 +1,42 @@
+{% extends "../base.html" %}
+
+
+{% block content %}
+    
+    
+    <div class="form-container">
+        <h1>Register</h1>
+        <form method="post" action="{% url 'user:register' %}">
+            {% csrf_token %}
+            <div class="field-container">
+                <label for="username" class="form-label">Username <span>*</span></label>
+                <input type="text" name="username" id="username" value="{{username}}" class="form-field" placeholder="Enter username" required>
+            </div>
+
+            <div class="field-container">
+                <label for="email" class="form-label">Email <span>*</span></label>
+                <input type="email" name="email" id="email" value="{{email}}" class="form-field" placeholder="Enter email" required>
+            </div>
+
+            <div class="field-container">
+                <label for="password" class="form-label">Password <span>*</span></label>
+                <input type="password" name="password" id="password" value="{{password}}" class="form-field" placeholder="Enter password" required>
+            </div>
+
+            <div class="field-container">
+                <label for="confirm-password" class="form-label">Confirm Password <span>*</span></label>
+                <input type="password" name="confirm-password" id="confirm-password" value="{{confirmpassword}}" class="form-field" placeholder="Re-enter password" required>
+            </div>
+
+            <!-- <button type="submit" class="text-white mb-2 bg-teal-600 rounded-md h-12 w-full font-semibold text-lg hover:bg-teal-500 transition ease-in duration-300">Register</button> -->
+            <div class="button-container">
+                <input type="submit" class="button" value="Register">
+                <p class="account-text">Already have an account? <a class="link-text" href="{% url 'user:login' %}">Login</a></p>
+            </div>
+            
+        </form>
+
+        {% block add %} {% endblock %}
+    </div>
+    
+{% endblock content %}

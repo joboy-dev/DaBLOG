@@ -1,0 +1,31 @@
+{% extends "../base.html" %}
+
+{% block content %}
+    <div class="form-container">
+        <h1>Update Post</h1>
+        <form method="post" action="{% url 'blog:post-update' post.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="field-container">
+                <label for="title" class="form-label">Title <span>*</span></label>
+                <input type="text" name="title" placeholder="Enter blog title" id="title" class="form-field" value="{{post.title}}" required>
+            </div>
+
+            <div class="field-container">
+                <label for="content" class="form-label">Content <span>*</span></label>
+                <textarea name="content" id="content" class="form-field" required>{{post.content}}</textarea>
+            </div>
+
+            <div class="field-container">
+                <label for="blog-picture" class="form-label">Blog Cover Picture</label>
+                <input type="file" name="blog-picture" placeholder="Select a picture for your blog article" id="blog-picture" class="form-field" value="{{post.blog_picture}}">
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="button">Update Post</button>
+            </div>
+        </form>
+
+        {% block add %} {% endblock %}
+    </div>
+    
+{% endblock content %}

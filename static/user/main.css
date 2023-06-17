@@ -1,0 +1,267 @@
+/* form */
+.form-container{
+    border: 2px solid rgb(234, 234, 234);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 110vh;
+    box-shadow: rgb(110, 109, 109, 0.5);
+    background-color: white;
+    margin: 15px 0;
+    margin-bottom: 40px;
+    padding: 40px 0;
+}
+
+.form-container h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+/* form field */
+.field-container{
+    margin-bottom: 15px;
+    padding: 0 40px;
+}
+
+.field-container textarea{
+    padding: 12px;
+    border-radius: 2px;
+    background-color: rgb(243, 243, 243);
+    height: 35vh;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    font-size: 17px;
+}
+
+/* form label  */
+.form-label{
+    padding-left: 8px;
+    font-weight: 600;
+    font-size: large;
+}
+
+.form-label span{
+    color: teal;
+}
+
+.form-field{
+    padding: 12px;
+    border-radius: 2px;
+    background-color: rgb(243, 243, 243);
+    height: 48px;
+    width: 100%;
+    margin-top: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    font-size: 17px;
+    outline: none;
+}
+
+/* User details */
+.details-container{
+    border: 2px solid rgb(234, 234, 234);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 110vh;
+    height: 80vh;
+    box-shadow: rgb(110, 109, 109, 0.5);
+    background-color: white;
+    margin: 15px 0;
+    margin-bottom: 40px;
+    padding: 40px 0;
+}
+
+.details-container h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.details-field-container{
+    margin: 10px 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+/* profile pic */
+.profile-pic-container{
+    width: 92%;
+    height: 300px;
+}
+
+.profile-pic-container .profile-pic{
+    height: 200px;
+    width: 200px;
+    border: 2px solid rgb(210, 210, 210);
+    border-radius: 250px;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-pic-container p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-pic-container p span{
+    font-size: 30px;
+    font-weight: normal;
+    color: teal;
+    font-style: italic;
+}
+
+div .blog-img{
+    display: flex;
+    justify-content: center;
+}
+
+/* button */
+.button-container{
+    padding: 20px 40px;
+    position: relative;
+    /* width: 100%; */
+}
+
+.button-container .button{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+    height: 50px;
+    background-color: teal;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    font-size: larger;
+    transition: ease-in-out 0.3s;
+}
+
+
+.button-container .link{
+    position: absolute;
+    top: 70px;
+    left: 38%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0 auto;
+    background-color: teal;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 30px;
+    transition: ease-in-out 0.3s;
+}
+
+.button-container .account-text .link-text{
+    text-decoration: none;
+    color: teal;
+    font-weight: normal;
+    font-size: 20px;
+    transition: ease-in-out 0.3s;
+}
+
+.button-container .button:hover{
+    background-color: rgb(2, 153, 153);
+}
+
+.button-container .link:hover{
+    background-color: rgb(2, 153, 153);
+}
+
+.button-container .account-text a:hover{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* account text at bottom */
+.account-text{
+    font-size: large;
+    padding: 10px 0;
+}
+
+.account-text a {
+    color: teal;
+    text-decoration: none;
+    transition: ease-in-out 0.1s;
+}
+
+.account-text a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+/* posts */
+.post-container{
+    background-color: white;
+    margin: 20px 0;
+    border: 1px solid rgb(207, 207, 207);
+    width: 100vh;
+    box-shadow: rgb(148, 148, 148, 0.5);
+    padding: 16px;
+}
+
+.post-container .top-div{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    /* border-bottom: 1px solid rgb(148, 148, 148); */
+}
+
+.post-container .top-div .author{
+    color: teal;
+    font-size: large;
+}
+
+.post-container .top-div .date{
+    color: rgb(125, 125, 125);
+    font-size: smaller;
+}
+
+.post-container .top-div .profile-pic{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #afafaf;
+    border-radius: 35px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.post-container h1 a{
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding-top: 20px;
+    cursor: pointer;
+    transition: ease-in 0.1s;
+    text-decoration: none;
+    color: black;
+}
+
+.post-container h1 a:hover{
+    color: teal;
+}
+
+.post-content p{
+    font-size: 20px;
+}
+
+
+

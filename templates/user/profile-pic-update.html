@@ -1,0 +1,24 @@
+{% block content %}
+
+
+<div class="form-container">
+
+    <!-- change profile picture -->
+    <h1>Change Profile Picture</h1>
+    <form method="post" action="#" enctype="multipart/form-data" style="display: flex; align-items: center; justify-content: space-between;">
+       {% csrf_token %}
+
+       <div class="field-container">
+           <label for="profile" class="form-label">Profile Picture <span class="text-teal-500">*</span></label>
+           <input type="file" name="profile-pic" id="profile" value="{{user.profile.image}}" class="form-field" required>
+       </div>
+
+       <div class="button-container">
+           <input type="submit" class="button" style="padding: 0 20px;" value="Change Profile Picture">
+       </div>
+       
+   </form>
+
+</div>
+
+{% endblock content %}

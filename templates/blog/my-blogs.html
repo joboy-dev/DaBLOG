@@ -1,0 +1,35 @@
+{% extends "../base.html" %}
+
+{% block heading %}
+    <h1 class="header">My Blogs</h1>
+{% endblock %}
+
+{% block content %}
+
+    {% for post in myposts reversed %}
+            
+    <div class="post-container">
+        <div class="top-div">
+            <div class="profile-pic">
+                <!-- <img src="" alt=""> -->
+            </div>
+            <p class="author">{{post.author}}</p>
+            <p class="date">{{post.created|date:"l d F, Y | H:i"}}</p>
+        </div>
+        <div>
+            <h1><a href="{% url 'blog:post-details' post.id %}">{{post.title}}</a></h1>
+            {% if post.blog_picture %}
+                <img class="blog-img" src="{{post.blog_picture.url}}" alt="blog picture" width="100%">
+                <br><hr>
+            {% endif %}
+            <p style="font-size: 20px;">{{post.content|truncatewords:15}}</p>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: center; justify-content: end;">
+            <a href="{% url 'blog:post-update' post.id %}" style="text-decoration: none; background-color: teal; padding: 10px; margin-top: 2px; color: white; border-radius: 5px;">Update Post</a>
+            <a href="{% url 'blog:post-delete' post.id %}" style="text-decoration: none; background-color: red; padding: 10px; margin-top: 2px; color: white; border-radius: 5px;">Delete Post</a>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+{% endblock content %}

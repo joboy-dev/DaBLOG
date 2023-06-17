@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+
+{% block content %}
+    
+    
+    <div class="form-container">
+        <form method="post" action="{% url 'user:user-profile-update' user.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Update Details</h1>
+
+            <div class="field-container">
+                <label for="username" class="form-label">Username <span>*</span></label>
+                <input type="text" name="username" id="username" value="{{user.username}}" class="form-field" placeholder="Enter username" required>
+            </div>
+
+            <div class="field-container mb-5">
+                <label for="email" class="form-label">Email <span>*</span></label>
+                <input type="email" name="email" id="email" value="{{user.email}}" class="form-field" placeholder="Enter email" required>
+            </div>
+
+            <div class="button-container">
+                <input type="submit" class="button" value="Update Profile">
+            </div>
+            
+        </form>
+    </div>
+
+    <div class="form-container">
+
+        <!-- change profile picture -->
+        <h1>Change Profile Picture</h1>
+        <form method="post" action="{% url 'user:upload-profile-pic' user.id %}" enctype="multipart/form-data" style="display: flex; align-items: center; justify-content: space-between;">
+           {% csrf_token %}
+    
+           <div class="field-container">
+               <label for="profile" class="form-label">Profile Picture <span class="text-teal-500">*</span></label>
+               <input type="file" name="profile-pic" id="profile" value="{{user.profile.image}}" class="form-field" required>
+           </div>
+    
+           <div class="button-container">
+               <input type="submit" class="button" style="padding: 0 20px;" value="Change Profile Picture">
+           </div>
+           
+       </form>
+    
+    </div>
+    
+    
+{% endblock content %}

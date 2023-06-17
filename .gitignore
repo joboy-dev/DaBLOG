@@ -1,0 +1,5 @@
+db.sqlite3
+dablog_venv
+__pycache__
+media
+.env

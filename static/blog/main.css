@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(210, 210, 210, 0.05);
+    font-family: 'Poppins';
+}
+
+.navbar{
+    background-color: teal;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 7.5vh;
+    box-shadow: rgba(128, 128, 128, 0.5);
+    z-index: 1000;
+}
+
+.navbar-content{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 0 4rem;
+}
+
+.navbar-house{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 4rem;
+}
+
+/* logo */
+.navbar-house #logo{
+    color: white;
+    text-decoration: none;
+    font-size: 55px;
+    font-weight: bolder;
+}
+
+.navbar-house #logo p span{
+    color: rgb(2, 197, 197);
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 85vh;
+}
+
+.nav-links .blog-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 17px;
+    width: 100%;
+    flex-basis: 50%;
+
+}
+
+.nav-links .user-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-basis: 40%;
+    font-size: 17px;
+}
+
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    transition: ease-in 0.1s;
+}
+
+.nav-links ul li a:hover{
+    font-weight: bold;
+}
+
+.nav-links ul li a:active{
+    font-weight: bold;
+}
+
+.user-links ul li a{
+    width: 10%;
+}
+
+.user-links ul li{
+    width: 10%;
+}
+
+.active{
+    font-weight: bold;
+}
+
+/* main body */
+.main{
+    margin-top: 7.5rem;
+    padding: 0 8rem;
+    width: 100%;
+}
+
+.main-content{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+
+/* heading */
+.header{
+    font-size: 55px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* Sidebar */
+.sidebar{
+    border: 1px solid rgb(172, 172, 172);
+    padding: 15px;
+    width: 40vh;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.sidebar h2{
+    font-weight: 600;
+    font-size: 45px;
+    margin-bottom: 4px;
+}
+
+.sidebar .side{
+    color: rgb(117, 116, 116);
+    margin-bottom: 12px;
+}
+
+.sidebar div{
+    width: 100%;
+    padding: 6px;
+    border: 1px solid rgb(172, 172, 172);
+}
+
+.sidebar div p {
+    color: rgb(117, 116, 116);
+    padding: 6px;
+}
+
+/* Add blog button */
+.add-blog-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-blog-button button{
+    background-color: teal;
+    padding: 4px;
+    width: 100%;
+    height: 45px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.add-blog-button button:hover{
+    background-color: rgb(2, 153, 153);
+}
+
+.add-blog-button button i{
+    margin-right: 8px;
+    font-size: larger;
+}
+
+.add-blog-button button a{
+   text-decoration: none;
+   color: white;
+}
+
+/* messages */
+.messages-success{
+    padding: 0 1rem;
+    background-color: rgb(3, 206, 206);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 4px;
+    transition: ease-in 0.3s;
+}
+
+.messages-success p{
+    color: teal;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.messages-info{
+    padding: 0 1rem;
+    background-color: rgb(255, 255, 151);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: 40px;
+    transition: ease-in 0.3s;
+}
+
+.messages-info p{
+    color: rgb(168, 168, 0);
+    font-weight: bold;
+    padding: 8px;
+}
+
+
+.messages-error{
+    padding: 0 1rem;
+    background-color: rgb(255, 144, 144);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    height: 40px;
+    justify-content: center;
+    transition: ease-in 0.3s;
+}
+
+.messages-error p{
+    color: red;
+    font-weight: bold;
+    padding: 8px;
+}
+
+div a .new-button{
+    text-decoration: none;
+    background-color: teal;
+    padding: 10px;
+    color: white;
+}
+

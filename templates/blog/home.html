@@ -1,0 +1,31 @@
+{% extends "../base.html" %}
+
+{% block heading %}
+    <h1 class="header">Blogs</h1>
+{% endblock %}
+
+{% block content %}
+    
+
+    {% for post in posts reversed %}
+        
+        <div class="post-container">
+            <div class="top-div">
+                <div class="profile-pic" style="background: url('{{user.profile_pic.url}}');"></div>
+                <p class="author">{{post.author}}</p>
+                <p class="date">{{post.updated|date:"l d F, Y | H:i"}}</p>
+            </div>
+            <br><hr>
+            <div class="post-content">
+                <h1><a href="{% url 'blog:post-details' post.id %}">{{post.title}}</a></h1><br>
+                <!-- Check if post.blog_picture has a file -->
+                {% if post.blog_picture %}
+                <img class="blog-img" src="{{post.blog_picture.url}}" alt="blog picture" width="70%">
+                <br><hr>
+                {% endif %}
+                <p>{{post.content|truncatewords:15}}</p>
+            </div>
+        </div>
+        
+    {% endfor %}
+{% endblock content %}
