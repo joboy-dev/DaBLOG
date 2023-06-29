@@ -5,10 +5,9 @@
     <div class="post-container">
         <div class="top-div">
             <div class="profile-pic">
-                <!-- <img src="" alt=""> -->
-            </div>
+            <img src="{{post.author.profile_pic.url}}" alt=""></div>
             <p class="author">{{post.author}}</p>
-            <p class="date">Created: {{post.created|date:"l d F, Y | H:i"}} |--| Updated: {{post.updated|date:"l d F, Y | H:i"}}</p>
+            <p class="date">Created: {{post.created|date:"l d F, Y | H:i"}} || Updated: {{post.updated|date:"l d F, Y | H:i"}}</p>
         </div>
         <br><hr>
         
@@ -16,8 +15,10 @@
             <h1 style="text-align:center;">{{post.title}}</h1>
             <br>
             {% if post.blog_picture %}
-                <img class="blog-img" src="{{post.blog_picture.url}}" alt="blog picture" width="100%">
-                <br><hr>
+                <div class="blog-img">
+                    <img src="{{post.blog_picture.url}}" alt="blog picture">
+                </div>
+                <br><hr><br>
             {% endif %}
             <p style="padding: 0 20px; text-align: justify; font-size: 20px;">{{post.content}}</p>
         </div>

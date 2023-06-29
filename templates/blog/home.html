@@ -11,7 +11,9 @@
         
         <div class="post-container">
             <div class="top-div">
-                <div class="profile-pic" style="background: url('{{user.profile_pic.url}}');"></div>
+                <div class="profile-pic">
+                    <img src="{{post.author.profile_pic.url}}" alt="profile-pic">
+                </div>
                 <p class="author">{{post.author}}</p>
                 <p class="date">{{post.updated|date:"l d F, Y | H:i"}}</p>
             </div>
@@ -20,12 +22,34 @@
                 <h1><a href="{% url 'blog:post-details' post.id %}">{{post.title}}</a></h1><br>
                 <!-- Check if post.blog_picture has a file -->
                 {% if post.blog_picture %}
-                <img class="blog-img" src="{{post.blog_picture.url}}" alt="blog picture" width="70%">
+                <div class="blog-img">
+                    <img src="{{post.blog_picture.url}}" alt="blog picture">
+                </div>
                 <br><hr>
                 {% endif %}
-                <p>{{post.content|truncatewords:15}}</p>
+                <p>{{post.content|truncatewords:100}}</p>
             </div>
         </div>
+
         
-    {% endfor %}
+        {% endfor %}
+        {% for item in page_obj %}
+            <!-- Display the item's information -->
+            <!-- <p>{{ item.field }}</p> -->
+        {% endfor %}
+
+        <!-- Display pagination links -->
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                <span class="current-page">{{ page_obj.number }}</span>
+                <a href="#">Next</a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <a href="#">Previous</a>
+                <span class="current-page">{{ page_obj.number }}</span>
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            {% endif %}
+        </div>
 {% endblock content %}

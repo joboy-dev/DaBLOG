@@ -30,7 +30,7 @@ body {
 .navbar-house{
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     gap: 4rem;
 }
 

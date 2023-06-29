@@ -11,7 +11,7 @@
     <div class="post-container">
         <div class="top-div">
             <div class="profile-pic">
-                <!-- <img src="" alt=""> -->
+                <img src="{{post.author.profile_pic.url}}" alt="">
             </div>
             <p class="author">{{post.author}}</p>
             <p class="date">{{post.created|date:"l d F, Y | H:i"}}</p>
@@ -19,7 +19,9 @@
         <div>
             <h1><a href="{% url 'blog:post-details' post.id %}">{{post.title}}</a></h1>
             {% if post.blog_picture %}
-                <img class="blog-img" src="{{post.blog_picture.url}}" alt="blog picture" width="100%">
+                <div class="blog-img">
+                    <img src="{{post.blog_picture.url}}" alt="blog picture">
+                </div>
                 <br><hr>
             {% endif %}
             <p style="font-size: 20px;">{{post.content|truncatewords:15}}</p>

@@ -4,6 +4,7 @@ from django.views.generic import DetailView, ListView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 
 from .models import Post
 
@@ -15,11 +16,16 @@ class HomeView(ListView):
     def get(self, request):
         current_user = self.request.user
         queryset = self.model.objects.all()
+        items_per_page = 10
+        paginator = Paginator(queryset, items_per_page)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
 
         context = {
             'posts':queryset, 
             'user':current_user,
             'title':'Home',
+            'page_obj': page_obj
         }
 
         return render(request, self.template_name, context)

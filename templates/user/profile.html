@@ -9,7 +9,9 @@
         <br><hr>
             {% csrf_token %}
             <div class="profile-pic-container">
-                <div class="profile-pic" style="background: url('{{user.profile_pic.url}}');"></div><br>
+                <div class="profile-pic">
+                    <img src="{{user.profile_pic.url}}" alt="">
+                </div><br>
                 
                 <div class="details-field-container">
                     <p>Username:- <span>{{user.username}}</span> </p>
